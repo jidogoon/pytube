@@ -77,7 +77,7 @@ class Caption:
             text = child.text or ""
             caption = unescape(text.replace("\n", " ").replace("  ", " "),)
             try:
-                duration = float(child.get["dur"])
+                duration = float(child.get("dur", 0))
             except KeyError:
                 duration = 0.0
             start = float(child.attrib.get("start", 0))
